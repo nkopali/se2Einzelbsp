@@ -54,4 +54,22 @@ public class MainActivity extends AppCompatActivity {
         response.setText(serverMsg);
 
     }
+
+    public void calculate(View v){
+        int numbers = Integer.parseInt(sendmsg.getText().toString());
+        int summe = 0;
+
+        while (numbers > 0){
+            summe = summe + numbers%10;
+            numbers /= 10;
+        }
+        System.out.println(summe);
+        String binary = Integer.toBinaryString(summe);
+        System.out.println(binary);
+
+        String calcResponse = "Quersumme: "+ summe + "\nBinary: "+ binary;
+
+        response.setText(calcResponse);
+
+    }
 }
